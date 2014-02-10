@@ -1,7 +1,6 @@
 {
   "name": "bp-winston-redis",
   "description": "A fixed-length Redis transport for winston",
-  "private": "true",
   "version": "0.2.1",
   "author": "Charlie Robbins <charlie.robbins@gmail.com>",
   "repository": {
