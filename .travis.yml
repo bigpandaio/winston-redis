@@ -1,0 +1,30 @@
+sudo: true
+dist: trusty
+group: travis_latest
+language: node_js
+
+node_js:
+- 8.9.0
+
+services:
+  - redis-server
+
+install:
+  - npm install
+
+#currently there aren't tests
+script: skip
+
+before_deploy:
+  - npm version -no-git-tag-version ${TRAVIS_TAG}
+  - curl -s -u ${ARTIFACTORY_USER}:${ARTIFACTORY_PASS} ${ARTIFACTORY_URL}/artifactory/api/npm/npm-local/auth/bp > .npmrc
+
+deploy:
+  - provider: script
+    script: npm publish --registry ${ARTIFACTORY_URL}/artifactory/api/npm/npm-local/
+    skip_cleanup: true
+    on:
+      tags: true
+
+after_deploy:
+  - rm -f .npmrc

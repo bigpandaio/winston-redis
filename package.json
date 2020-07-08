@@ -1,13 +1,14 @@
 {
-  "name": "winston-redis",
+  "name": "@bp/winston-redis",
   "description": "A fixed-length Redis transport for winston",
-  "version": "0.2.1",
-  "author": "Charlie Robbins <charlie.robbins@gmail.com>",
-  "repository": {
-    "type": "git",
-    "url": "http://github.com/indexzero/winston-redis.git"
-  },
-  "keywords": ["logging", "sysadmin", "tools", "winston", "redis"],
+  "version": "0.0.0",
+  "keywords": [
+    "logging",
+    "sysadmin",
+    "tools",
+    "winston",
+    "redis"
+  ],
   "dependencies": {
     "redis": "0.8.x"
   },
@@ -16,6 +17,10 @@
     "vows": "0.5.x"
   },
   "main": "./lib/winston-redis",
-  "scripts": { "test": "vows test/*-test.js --spec" },
-  "engines": { "node": ">= 0.4.0" }
+  "scripts": {
+    "test": "vows test/*-test.js --spec"
+  },
+  "engines": {
+    "node": ">= 0.4.0"
+  }
 }
